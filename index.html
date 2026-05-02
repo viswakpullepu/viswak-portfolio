@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishwak Naidu | Creative Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Vishwak Naidu, a creative developer from Hyderabad, India, building modern and interactive web experiences.">
+    <!-- Preload Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Syne:wght@700;800&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="loader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #050505; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s ease;">
+        <div style="font-family: 'Syne'; font-size: 2rem; font-weight: 800; color: var(--accent-primary); letter-spacing: 10px; animation: pulse 1.5s infinite;">VN.</div>
+    </div>
+    
+    <style>
+        @keyframes pulse {
+            0% { opacity: 0.3; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.3; transform: scale(0.9); }
+        }
+    </style>
+
+    <div class="custom-cursor"></div>
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">VN.</div>
+        <div class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#projects">Work</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+            
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-reveal">
+                    <p class="reveal-text" style="color: var(--accent-primary); font-weight: 600; letter-spacing: 4px; margin-bottom: 1rem;">WELCOME TO MY UNIVERSE</p>
+                    <h1 class="reveal-title">HI, I'M VISHWAK</h1>
+                    <p class="reveal-sub" style="margin: 0 auto 2rem;">I build modern, interactive web experiences that blend design with cutting-edge technology.</p>
+                    <div class="cta-group reveal-btns">
+                        <a href="#projects" class="btn btn-primary">Explore My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="reveal-stagger">Crafting Digital <br><span style="color: var(--accent-primary);">Excellence</span></h2>
+                        <p class="reveal-stagger">I’m a Computer Science student passionate about building modern and visually engaging web experiences. I enjoy combining design and development to create clean, functional, and interactive digital products. I’m currently exploring frontend development, UI/UX, and AI-powered tools.</p>
+                        <p class="reveal-stagger" style="margin-top: 1rem; font-style: italic;">Based in Hyderabad, India.</p>
+                    </div>
+                    <div class="about-visual glass-card" style="display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Syne'; font-size: 5rem; opacity: 0.3;">VN</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="skills">
+                <h2 style="margin-bottom: 3rem; text-align: center;">Core <span style="color: var(--accent-primary);">Arsenal</span></h2>
+                <div class="skills-grid">
+                    <div class="glass-card skill-card">
+                        <h3>Web Tech</h3>
+                        <div style="margin-top: 1.5rem;">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Vite</span>
+                            <span class="skill-tag">Prompt Engineering</span>
+                            <span class="skill-tag">Generative AI</span>
+                        </div>
+                    </div>
+                    <div class="glass-card skill-card">
+                        <h3>Tools & Analytics</h3>
+                        <div style="margin-top: 1.5rem;">
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Excel</span>
+                            <span class="skill-tag">Google Ad Manager</span>
+                            <span class="skill-tag">VS Code</span>
+                        </div>
+                    </div>
+                    <div class="glass-card skill-card">
+                        <h3>Concepts</h3>
+                        <div style="margin-top: 1.5rem;">
+                            <span class="skill-tag">UI/UX Design</span>
+                            <span class="skill-tag">Cybersecurity</span>
+                            <span class="skill-tag">VLAN Basics</span>
+                            <span class="skill-tag">Computer Science Education</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="education">
+                <h2 style="margin-bottom: 4rem;">Academic <span style="color: var(--accent-primary);">Foundation</span></h2>
+                <div class="timeline">
+                    <div class="timeline-item reveal-stagger">
+                        <h3 style="color: var(--accent-primary);">B.Tech in Computer Science</h3>
+                        <p style="font-weight: 600;">CVR College of Engineering | 2025 - 2029</p>
+                        <p style="color: var(--text-dim); margin-top: 0.5rem;">Focusing on Computational Science and emerging technologies.</p>
+                    </div>
+                    <div class="timeline-item reveal-stagger">
+                        <h3 style="color: #fff;">Intermediate (MPC)</h3>
+                        <p style="font-weight: 600;">Excellencia Junior College | 2023 - 2025</p>
+                    </div>
+                    <div class="timeline-item reveal-stagger">
+                        <h3 style="color: #fff;">SSC</h3>
+                        <p style="font-weight: 600;">Sri Chaitanya School | 2022 - 2023</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="experience">
+                <h2 style="margin-bottom: 4rem;">Evolution</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3 style="color: var(--accent-primary);">Campus Ambassador</h3>
+                        <p style="font-weight: 600;">SkillHigh | Oct 2025 - Dec 2025</p>
+                        <ul style="margin-top: 1rem; color: var(--text-dim); list-style: none;">
+                            <li>• Promoted technical programs across campus</li>
+                            <li>• Engaged students in skill-building activities</li>
+                            <li>• Represented organization at major events</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Projects Built</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="10">0</span>
+                        <span class="stat-label">Technologies Explored</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="200">0</span>
+                        <span class="stat-label">Learning Hours</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="projects">
+                <h2 style="margin-bottom: 3rem;">Selected <span style="color: var(--accent-primary);">Creations</span></h2>
+                <div class="projects-grid">
+                    <div class="glass-card project-card" data-project="kotha">
+                        <div class="project-img" style="background: url('assets/kotha.png') center/cover no-repeat;"></div>
+                        <div class="project-info">
+                            <p style="color: var(--accent-primary); font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem;">INTERIOR DESIGN</p>
+                            <h3>Kothas Atelier</h3>
+                            <p>A premium, cinematic interior design showcase.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card" data-project="lorven">
+                        <div class="project-img" style="background: url('assets/lorven.png') center/cover no-repeat;"></div>
+                        <div class="project-info">
+                            <p style="color: var(--accent-primary); font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem;">STRATEGY & GROWTH</p>
+                            <h3>Lorven</h3>
+                            <p>A sophisticated corporate strategy and insights platform.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card" data-project="reviso">
+                        <div class="project-img" style="background: url('assets/reviso.png') center/cover no-repeat;"></div>
+                        <div class="project-info">
+                            <p style="color: var(--accent-primary); font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem;">EDTECH</p>
+                            <h3>Reviso</h3>
+                            <p>Intelligent revision app powered by spaced repetition.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GitHub Section -->
+            <section id="github" class="github">
+                <h2 style="margin-bottom: 3rem;">GitHub <span style="color: var(--accent-primary);">Repositories</span></h2>
+                <div id="repo-container" class="repo-grid">
+                    <!-- Dynamic Content -->
+                    <div class="glass-card">Loading repos...</div>
+                </div>
+            </section>
+
+            <!-- Currently Learning -->
+            <section class="learning">
+                <h2 style="margin-bottom: 3rem;">Currently <span style="color: var(--accent-primary);">Learning</span></h2>
+                <div class="learning-grid">
+                    <div class="glass-card learning-card reveal-stagger">
+                        <div class="learning-dot"></div>
+                        <div>
+                            <h3>Advanced React</h3>
+                            <p style="color: var(--text-dim);">Mastering state management and performance.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card learning-card reveal-stagger">
+                        <div class="learning-dot"></div>
+                        <div>
+                            <h3>Performance Opt.</h3>
+                            <p style="color: var(--text-dim);">Deep dive into V8 and rendering bottlenecks.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card learning-card reveal-stagger">
+                        <div class="learning-dot"></div>
+                        <div>
+                            <h3>3D Web (Three.js)</h3>
+                            <p style="color: var(--text-dim);">Building immersive spatial experiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section id="certifications" class="certifications">
+                <h2 style="margin-bottom: 3rem; text-align: center;">Verified <span style="color: var(--accent-primary);">Expertise</span></h2>
+                <div class="skills-grid">
+                    <div class="glass-card">
+                        <p style="font-size: 0.8rem; color: var(--accent-primary); margin-bottom: 0.5rem;">GOOGLE</p>
+                        <h3>Ad Manager Revenue</h3>
+                        <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">Drive Advertising Revenue with Google Ad Manager</p>
+                    </div>
+                    <div class="glass-card">
+                        <p style="font-size: 0.8rem; color: var(--accent-primary); margin-bottom: 0.5rem;">PALO ALTO NETWORKS</p>
+                        <h3>Cybersecurity Foundation</h3>
+                        <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">Fundamental security concepts and network defense.</p>
+                    </div>
+                    <div class="glass-card">
+                        <p style="font-size: 0.8rem; color: var(--accent-primary); margin-bottom: 0.5rem;">DEEPLEARNING.AI</p>
+                        <h3>Prompt Engineering</h3>
+                        <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">Introduction to Prompt Engineering for Generative AI.</p>
+                    </div>
+                    <div class="glass-card">
+                        <p style="font-size: 0.8rem; color: var(--accent-primary); margin-bottom: 0.5rem;">MICROSOFT</p>
+                        <h3>Excel Specialist</h3>
+                        <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">Getting Started with Microsoft Excel</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strengths & Weaknesses -->
+            <section class="sw">
+                <div class="sw-grid">
+                    <div class="glass-card">
+                        <h2 style="color: #00ff88; margin-bottom: 1.5rem;">Strengths</h2>
+                        <ul style="list-style: none; color: var(--text-dim);">
+                            <li style="margin-bottom: 1rem;">• Quick learner with high adaptability</li>
+                            <li style="margin-bottom: 1rem;">• Intense curiosity for emerging tech</li>
+                            <li style="margin-bottom: 1rem;">• Strong design + development synergy</li>
+                            <li style="margin-bottom: 1rem;">• Analytical problem-solving mindset</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <h2 style="color: #ff4d4d; margin-bottom: 1.5rem;">Growth Areas</h2>
+                        <ul style="list-style: none; color: var(--text-dim);">
+                            <li style="margin-bottom: 1rem;">• Building more hands-on project experience</li>
+                            <li style="margin-bottom: 1rem;">• Mastered advanced architectural concepts</li>
+                            <li style="margin-bottom: 1rem;">• Deepening technical depth in backend</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact">
+                <div class="contact-container glass-card">
+                    <h2 style="margin-bottom: 1rem; text-align: center;">Let's Build <span style="color: var(--accent-primary);">Something Great</span></h2>
+                    <p style="text-align: center; color: var(--text-dim); margin-bottom: 3rem;">I'm always open to discussing new projects or creative ideas.</p>
+                    <form id="contact-form">
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <textarea rows="5" placeholder="Message" required></textarea>
+                        <button type="submit" class="btn btn-primary" style="border: none; cursor: pointer;">Send Message</button>
+                    </form>
+                    <div id="success-msg" class="success-message">
+                        <h3>Success!</h3>
+                        <p>Your message has been sent to Vishwak.</p>
+                    </div>
+                    <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 2rem;">
+                        <a href="https://github.com/viswakpullepu/" target="_blank" style="color: #fff; text-decoration: none;">GitHub</a>
+                        <a href="https://www.linkedin.com/in/viswakpullepu/" target="_blank" style="color: #fff; text-decoration: none;">LinkedIn</a>
+                        <a href="mailto:pullepuviswak08@gmail.com" style="color: #fff; text-decoration: none;">Email</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <p>&copy; 2026 Vishwak Naidu. Built with Passion.</p>
+                <div style="font-family: 'Syne'; opacity: 0.5;">HYDERABAD, IN</div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="glass-card modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modal-body">
+                <!-- Content Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js" defer></script>
+    <script src="main.js" defer></script>
+</body>
+</html>
