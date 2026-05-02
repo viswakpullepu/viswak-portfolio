@@ -139,12 +139,13 @@ function startHeroAnimation() {
     duration: 0.8, 
     stagger: 0.2,
     ease: "power2.out" 
-  }, "-=0.8");
+  }, "-=0.8")
+  .set([".reveal-text", ".reveal-title", ".reveal-sub", ".reveal-btns"], { clearProps: "all" });
 }
 
 // Advanced Section Reveals (Wrapped in a function to defer)
 function initScrollAnimations() {
-  const revealSections = document.querySelectorAll('section');
+  const revealSections = document.querySelectorAll('section:not(.hero)');
   revealSections.forEach(section => {
     const elements = section.querySelectorAll('.reveal-stagger, .glass-card, .timeline-item');
     if (elements.length > 0) {
