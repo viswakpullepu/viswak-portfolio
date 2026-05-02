@@ -7,13 +7,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Initialize Lenis Smooth Scroll
 const isMobile = window.innerWidth < 768;
+const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
 const lenis = new Lenis({
   duration: isMobile ? 1.0 : 1.5,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   direction: 'vertical',
   gestureDirection: 'vertical',
-  smooth: true,
+  smooth: !isTouch, // Disable smoothing on touch for native feel/perf
   mouseMultiplier: isMobile ? 0.8 : 1.1,
   touchMultiplier: 2,
 });
@@ -140,7 +141,10 @@ function startHeroAnimation() {
     stagger: 0.2,
     ease: "power2.out" 
   }, "-=0.8")
-  .set([".reveal-text", ".reveal-title", ".reveal-sub", ".reveal-btns"], { clearProps: "all" });
+  .set([".reveal-text", ".reveal-title", ".reveal-sub", ".reveal-btns"], { clearProps: "all" })
+  .add(() => {
+    ScrollTrigger.refresh(); // Crucial: Recalculate triggers after intro
+  });
 }
 
 // Advanced Section Reveals (Wrapped in a function to defer)
