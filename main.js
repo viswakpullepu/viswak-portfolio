@@ -140,18 +140,6 @@ function startHeroAnimation() {
     stagger: 0.2,
     ease: "power2.out" 
   }, "-=0.8");
-
-  // Floating animation for 3D avatar
-  const avatar = document.querySelector('.about-visual img');
-  if (avatar) {
-    gsap.to(avatar, {
-      y: 20,
-      duration: 3,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut"
-    });
-  }
 }
 
 // Advanced Section Reveals (Wrapped in a function to defer)
