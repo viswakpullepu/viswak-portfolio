@@ -9,6 +9,7 @@
   --font-heading: 'Syne', sans-serif;
   --font-body: 'Inter', sans-serif;
   --section-padding: clamp(4rem, 10vw, 8rem);
+  --glow-accent: rgba(0, 242, 255, 0.3);
 }
 
 * {
@@ -33,6 +34,7 @@ h1, h2, h3 {
   font-family: var(--font-heading);
   font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: -2px;
 }
 
 /* Custom Cursor (Hidden on Touch) */
@@ -158,6 +160,13 @@ section {
   border-radius: 20px;
   padding: 2rem;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 0 0 0 var(--glow-accent);
+}
+
+.glass-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 20px 0 var(--glow-accent);
+  transform: translateY(-5px);
 }
 
 /* Project Cards */
