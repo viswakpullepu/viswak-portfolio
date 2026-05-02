@@ -83,7 +83,6 @@ if (cursor && !isMobile) {
       gsap.to(cursor, { scale: 1, opacity: 1, duration: 0.3, backgroundColor: 'var(--accent-primary)' });
     });
   });
-}
 
 // Cinematic Preloader Dismissal
 const dismissLoader = () => {
