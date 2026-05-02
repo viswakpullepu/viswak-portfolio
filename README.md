@@ -22,7 +22,22 @@ A high-performance, cinematic, and interactive personal portfolio website built 
    ```bash
    git clone https://github.com/viswakpullepu/viswak-portfolio.git
    ```
-2. Open `index.html` in your browser (Live Server recommended).
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file and add your Supabase credentials (see below).
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 🔐 Environment Variables
+Create a `.env` file in the root directory and add:
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
 ## 📄 License
 This project is for personal showcase. All rights reserved.

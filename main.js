@@ -245,12 +245,12 @@ contactForm.addEventListener('submit', async (e) => {
 
   try {
     // Send to Supabase
-    const response = await fetch('https://fozjxysulmvzomcphlwf.supabase.co/rest/v1/portfolio_contacts', {
+    const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/rest/v1/portfolio_contacts`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'apikey': 'sb_publishable_o5I60Mxr3_nxwnpDRaT96w_sj1OqPLF',
-        'Authorization': 'Bearer sb_publishable_o5I60Mxr3_nxwnpDRaT96w_sj1OqPLF',
+        'apikey': import.meta.env.VITE_SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
         'Prefer': 'return=minimal'
       },
       body: JSON.stringify(formData)
