@@ -1,3 +1,10 @@
+import Lenis from 'lenis'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// GSAP Initialization
+gsap.registerPlugin(ScrollTrigger);
+
 // Initialize Lenis Smooth Scroll
 const lenis = new Lenis({
   duration: 1.2,
@@ -20,9 +27,6 @@ gsap.ticker.add((time) => {
 });
 gsap.ticker.lagSmoothing(0);
 
-// GSAP Initialization
-gsap.registerPlugin(ScrollTrigger);
-
 // Navigation Toggle
 const navToggle = document.getElementById('nav-toggle');
 const navLinks = document.getElementById('nav-links');
@@ -37,8 +41,8 @@ if (navToggle) {
 // Close nav on link click
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
-    navToggle.classList.remove('active');
-    navLinks.classList.remove('active');
+    if (navToggle) navToggle.classList.remove('active');
+    if (navLinks) navLinks.classList.remove('active');
   });
 });
 
@@ -66,7 +70,7 @@ if (cursor) {
   });
 }
 
-// Failsafe Preloader Dismissal
+// Preloader Dismissal
 const dismissLoader = () => {
   const loader = document.querySelector('#loader');
   if (loader && loader.style.display !== 'none') {
@@ -82,10 +86,8 @@ const dismissLoader = () => {
   }
 };
 
-// Dismiss after 3 seconds anyway
+// Failsafe timeout
 setTimeout(dismissLoader, 3000);
-
-// Dismiss on window load
 window.addEventListener('load', dismissLoader);
 
 function startHeroAnimation() {
@@ -160,7 +162,7 @@ async function fetchGitHubRepos() {
       container.appendChild(card);
     });
   } catch (err) {
-    container.innerHTML = '<div class="glass-card">Failed to load repositories. Please check your connection.</div>';
+    container.innerHTML = '<div class="glass-card">Failed to load repositories.</div>';
   }
 }
 
@@ -200,6 +202,7 @@ document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('click', () => {
     const id = card.getAttribute('data-project');
     const data = projectData[id];
+    if (!data) return;
     
     modalBody.innerHTML = `
       <h1 style="color: var(--accent-primary); margin-bottom: 1rem;">${data.title}</h1>
@@ -245,7 +248,7 @@ if (closeModal) {
   });
 }
 
-// Contact Form Logic with Failsafe Env Checks
+// Contact Form Logic
 const contactForm = document.getElementById('contact-form');
 const successMsg = document.getElementById('success-msg');
 
@@ -263,8 +266,7 @@ if (contactForm) {
     const supabaseKey = import.meta.env?.VITE_SUPABASE_ANON_KEY;
 
     if (!supabaseUrl || !supabaseKey) {
-      console.warn("Supabase credentials missing. Submission skipped.");
-      // Just simulate success for UX if keys are missing
+      console.warn("Supabase credentials missing.");
       gsap.to(contactForm, { opacity: 0, duration: 0.5, onComplete: () => {
         contactForm.style.display = 'none';
         successMsg.style.display = 'block';
@@ -295,12 +297,9 @@ if (contactForm) {
             gsap.from(successMsg, { opacity: 0, y: 20, duration: 0.5 });
           }
         });
-      } else {
-        alert("Submission failed. Check your Supabase configuration.");
       }
     } catch (err) {
-      console.error("Submission error:", err);
-      alert("Connection error.");
+      console.error(err);
     }
   });
 }
