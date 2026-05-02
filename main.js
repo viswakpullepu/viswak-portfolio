@@ -84,25 +84,30 @@ if (cursor && !isMobile) {
     });
   });
 
-// Cinematic Preloader Dismissal
+// Cinematic Preloader Dismissal (Optimized for Speed)
 const dismissLoader = () => {
   const loader = document.querySelector('#loader');
   if (loader && loader.style.display !== 'none') {
     const tl = gsap.timeline();
     tl.to(loader, {
       opacity: 0,
-      duration: 1.2,
-      ease: "expo.inOut",
+      duration: 0.8,
+      ease: "power2.inOut",
       onComplete: () => {
         loader.style.display = 'none';
         startHeroAnimation();
-        fetchGitHubRepos();
+        // Defer heavy tasks
+        setTimeout(() => {
+          fetchGitHubRepos();
+          initScrollAnimations();
+        }, 100);
       }
     });
   }
 };
 
-setTimeout(dismissLoader, 3000);
+// Minimal wait time (800ms) instead of 3s
+setTimeout(dismissLoader, 800);
 window.addEventListener('load', dismissLoader);
 
 function startHeroAnimation() {
@@ -137,27 +142,29 @@ function startHeroAnimation() {
   }, "-=0.8");
 }
 
-// Advanced Section Reveals
-const revealSections = document.querySelectorAll('section');
-revealSections.forEach(section => {
-  const elements = section.querySelectorAll('.reveal-stagger, .glass-card, .timeline-item');
-  if (elements.length > 0) {
-    gsap.from(elements, {
-      scrollTrigger: {
-        trigger: section,
-        start: "top 85%",
-        toggleActions: "play none none none"
-      },
-      y: isMobile ? 30 : 60, 
-      opacity: 0,
-      rotateX: isMobile ? 0 : -10,
-      duration: 1.2,
-      stagger: 0.15,
-      ease: "power3.out",
-      clearProps: "all"
-    });
-  }
-});
+// Advanced Section Reveals (Wrapped in a function to defer)
+function initScrollAnimations() {
+  const revealSections = document.querySelectorAll('section');
+  revealSections.forEach(section => {
+    const elements = section.querySelectorAll('.reveal-stagger, .glass-card, .timeline-item');
+    if (elements.length > 0) {
+      gsap.from(elements, {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        },
+        y: isMobile ? 30 : 60, 
+        opacity: 0,
+        rotateX: isMobile ? 0 : -10,
+        duration: 1.2,
+        stagger: 0.15,
+        ease: "power3.out",
+        clearProps: "all"
+      });
+    }
+  });
+}
 
 // Stats Counting Animation
 const stats = document.querySelectorAll('.stat-number');
