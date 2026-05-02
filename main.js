@@ -5,14 +5,17 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 // GSAP Initialization
 gsap.registerPlugin(ScrollTrigger);
 
-// Initialize Lenis Smooth Scroll (Made more Cinematic)
+// Initialize Lenis Smooth Scroll
+const isMobile = window.innerWidth < 768;
+
 const lenis = new Lenis({
-  duration: 1.5, // Increased duration for smoother, heavy feel
+  duration: isMobile ? 1.0 : 1.5,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   direction: 'vertical',
   gestureDirection: 'vertical',
   smooth: true,
-  mouseMultiplier: 1.1,
+  mouseMultiplier: isMobile ? 0.8 : 1.1,
+  touchMultiplier: 2,
 });
 
 function raf(time) {
@@ -56,9 +59,9 @@ if (navToggle) {
   });
 }
 
-// Custom Cursor (Enhanced responsiveness)
+// Custom Cursor (Hidden on Touch/Mobile)
 const cursor = document.querySelector('.custom-cursor');
-if (cursor) {
+if (cursor && !isMobile) {
   document.addEventListener('mousemove', (e) => {
     gsap.to(cursor, {
       x: e.clientX,
@@ -67,6 +70,9 @@ if (cursor) {
       ease: "power2.out"
     });
   });
+} else if (cursor) {
+  cursor.style.display = 'none';
+}
 
   const interactiveElements = document.querySelectorAll('a, button, .glass-card, .btn, .project-card');
   interactiveElements.forEach(el => {
@@ -140,14 +146,14 @@ revealSections.forEach(section => {
     gsap.from(elements, {
       scrollTrigger: {
         trigger: section,
-        start: "top 80%",
+        start: "top 85%",
         toggleActions: "play none none none"
       },
-      y: 60, // Increased for more "pop"
+      y: isMobile ? 30 : 60, 
       opacity: 0,
-      rotateX: -10, // Added slight 3D rotation
+      rotateX: isMobile ? 0 : -10,
       duration: 1.2,
-      stagger: 0.2,
+      stagger: 0.15,
       ease: "power3.out",
       clearProps: "all"
     });

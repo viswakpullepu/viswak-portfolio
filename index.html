@@ -280,25 +280,56 @@
                 </div>
             </section>
 
-            <!-- Contact Section -->
+            <!-- Contact Section (Premium Overhaul) -->
             <section id="contact" class="contact">
-                <div class="contact-container glass-card">
-                    <h2 style="margin-bottom: 1rem; text-align: center;">Let's Build <span style="color: var(--accent-primary);">Something Great</span></h2>
-                    <p style="text-align: center; color: var(--text-dim); margin-bottom: 3rem;">I'm always open to discussing new projects or creative ideas.</p>
-                    <form id="contact-form">
-                        <input type="text" placeholder="Name" required>
-                        <input type="email" placeholder="Email" required>
-                        <textarea rows="5" placeholder="Message" required></textarea>
-                        <button type="submit" class="btn btn-primary" style="border: none; cursor: pointer;">Send Message</button>
-                    </form>
-                    <div id="success-msg" class="success-message">
-                        <h3>Success!</h3>
-                        <p>Your message has been sent to Vishwak.</p>
+                <div class="contact-grid">
+                    <div class="contact-info-panel reveal-stagger">
+                        <h2 class="reveal-title">Ready to<br><span style="color: var(--accent-primary);">Collaborate?</span></h2>
+                        <p style="font-size: 1.1rem; margin-bottom: 3rem; color: var(--text-dim); max-width: 400px;">I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 2rem;">
+                            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                                <div style="width: 50px; height: 50px; background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">📧</div>
+                                <div>
+                                    <p style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px;">Email Me</p>
+                                    <p style="font-weight: 600;">pullepuviswak08@gmail.com</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                                <div style="width: 50px; height: 50px; background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">📍</div>
+                                <div>
+                                    <p style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px;">Location</p>
+                                    <p style="font-weight: 600;">Hyderabad, India</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 4rem; display: flex; gap: 1.5rem;">
+                            <a href="https://github.com/viswakpullepu/" target="_blank" class="skill-tag" style="padding: 0.8rem 1.5rem; text-decoration: none; color: #fff;">GitHub</a>
+                            <a href="https://www.linkedin.com/in/viswakpullepu/" target="_blank" class="skill-tag" style="padding: 0.8rem 1.5rem; text-decoration: none; color: #fff;">LinkedIn</a>
+                        </div>
                     </div>
-                    <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 2rem;">
-                        <a href="https://github.com/viswakpullepu/" target="_blank" style="color: #fff; text-decoration: none;">GitHub</a>
-                        <a href="https://www.linkedin.com/in/viswakpullepu/" target="_blank" style="color: #fff; text-decoration: none;">LinkedIn</a>
-                        <a href="mailto:pullepuviswak08@gmail.com" style="color: #fff; text-decoration: none;">Email</a>
+
+                    <div class="contact-form-panel reveal-stagger">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" required placeholder=" ">
+                                <label for="name">Your Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required placeholder=" ">
+                                <label for="email">Email Address</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="4" required placeholder=" "></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                        <div id="success-msg" class="success-message">
+                            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Message Received!</h3>
+                            <p>I'll get back to you within 24 hours. Let's make it happen.</p>
+                        </div>
                     </div>
                 </div>
             </section>
