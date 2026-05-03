@@ -242,13 +242,14 @@ section {
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
-  .hero-content {
+  .hero-reveal {
     padding-top: 20vh; /* Increased to avoid clipping */
   }
   
-  .hero-title {
-    font-size: clamp(2.5rem, 10vw, 4rem);
+  .hero h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
     letter-spacing: -1px;
+    word-break: break-word;
   }
 
   .nav-links {
